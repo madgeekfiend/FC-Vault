@@ -1,0 +1,451 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		06F64827149E4ADB0047E294 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F64826149E4ADB0047E294 /* UIKit.framework */; };
+		06F64829149E4ADB0047E294 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F64828149E4ADB0047E294 /* Foundation.framework */; };
+		06F6482B149E4ADB0047E294 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F6482A149E4ADB0047E294 /* CoreGraphics.framework */; };
+		06F6482D149E4ADB0047E294 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F6482C149E4ADB0047E294 /* CoreData.framework */; };
+		06F64833149E4ADB0047E294 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 06F64831149E4ADB0047E294 /* InfoPlist.strings */; };
+		06F64835149E4ADB0047E294 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F64834149E4ADB0047E294 /* main.m */; };
+		06F64839149E4ADB0047E294 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F64838149E4ADB0047E294 /* AppDelegate.m */; };
+		06F6483C149E4ADB0047E294 /* Password_Keep.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 06F6483A149E4ADB0047E294 /* Password_Keep.xcdatamodeld */; };
+		06F64844149E4ADB0047E294 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F64843149E4ADB0047E294 /* SenTestingKit.framework */; };
+		06F64845149E4ADB0047E294 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F64826149E4ADB0047E294 /* UIKit.framework */; };
+		06F64846149E4ADB0047E294 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F64828149E4ADB0047E294 /* Foundation.framework */; };
+		06F64847149E4ADB0047E294 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F6482C149E4ADB0047E294 /* CoreData.framework */; };
+		06F6484F149E4ADB0047E294 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 06F6484D149E4ADB0047E294 /* InfoPlist.strings */; };
+		06F64852149E4ADB0047E294 /* Password_KeepTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F64851149E4ADB0047E294 /* Password_KeepTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		06F64848149E4ADB0047E294 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 06F64819149E4ADA0047E294 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 06F64821149E4ADB0047E294;
+			remoteInfo = "Password Keep";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		06F64822149E4ADB0047E294 /* Password Keep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Password Keep.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		06F64826149E4ADB0047E294 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		06F64828149E4ADB0047E294 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		06F6482A149E4ADB0047E294 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		06F6482C149E4ADB0047E294 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		06F64830149E4ADB0047E294 /* Password Keep-Info.plist */ = {isa = PBXFileReference; path = "Password Keep-Info.plist"; sourceTree = "<group>"; };
+		06F64832149E4ADB0047E294 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		06F64834149E4ADB0047E294 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		06F64836149E4ADB0047E294 /* Password Keep-Prefix.pch */ = {isa = PBXFileReference; path = "Password Keep-Prefix.pch"; sourceTree = "<group>"; };
+		06F64837149E4ADB0047E294 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		06F64838149E4ADB0047E294 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		06F6483B149E4ADB0047E294 /* Password_Keep.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Password_Keep.xcdatamodel; sourceTree = "<group>"; };
+		06F64842149E4ADB0047E294 /* Password KeepTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Password KeepTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		06F64843149E4ADB0047E294 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		06F6484C149E4ADB0047E294 /* Password KeepTests-Info.plist */ = {isa = PBXFileReference; path = "Password KeepTests-Info.plist"; sourceTree = "<group>"; };
+		06F6484E149E4ADB0047E294 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		06F64850149E4ADB0047E294 /* Password_KeepTests.h */ = {isa = PBXFileReference; path = Password_KeepTests.h; sourceTree = "<group>"; };
+		06F64851149E4ADB0047E294 /* Password_KeepTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Password_KeepTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		06F6481F149E4ADB0047E294 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06F64827149E4ADB0047E294 /* UIKit.framework in Frameworks */,
+				06F64829149E4ADB0047E294 /* Foundation.framework in Frameworks */,
+				06F6482B149E4ADB0047E294 /* CoreGraphics.framework in Frameworks */,
+				06F6482D149E4ADB0047E294 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		06F6483E149E4ADB0047E294 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06F64844149E4ADB0047E294 /* SenTestingKit.framework in Frameworks */,
+				06F64845149E4ADB0047E294 /* UIKit.framework in Frameworks */,
+				06F64846149E4ADB0047E294 /* Foundation.framework in Frameworks */,
+				06F64847149E4ADB0047E294 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		06F64817149E4ADA0047E294 = {
+			isa = PBXGroup;
+			children = (
+				06F6482E149E4ADB0047E294 /* Password Keep */,
+				06F6484A149E4ADB0047E294 /* Password KeepTests */,
+				06F64825149E4ADB0047E294 /* Frameworks */,
+				06F64823149E4ADB0047E294 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		06F64823149E4ADB0047E294 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				06F64822149E4ADB0047E294 /* Password Keep.app */,
+				06F64842149E4ADB0047E294 /* Password KeepTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		06F64825149E4ADB0047E294 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				06F64826149E4ADB0047E294 /* UIKit.framework */,
+				06F64828149E4ADB0047E294 /* Foundation.framework */,
+				06F6482A149E4ADB0047E294 /* CoreGraphics.framework */,
+				06F6482C149E4ADB0047E294 /* CoreData.framework */,
+				06F64843149E4ADB0047E294 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		06F6482E149E4ADB0047E294 /* Password Keep */ = {
+			isa = PBXGroup;
+			children = (
+				06F64837149E4ADB0047E294 /* AppDelegate.h */,
+				06F64838149E4ADB0047E294 /* AppDelegate.m */,
+				06F6483A149E4ADB0047E294 /* Password_Keep.xcdatamodeld */,
+				06F6482F149E4ADB0047E294 /* Supporting Files */,
+			);
+			path = "Password Keep";
+			sourceTree = "<group>";
+		};
+		06F6482F149E4ADB0047E294 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				06F64830149E4ADB0047E294 /* Password Keep-Info.plist */,
+				06F64831149E4ADB0047E294 /* InfoPlist.strings */,
+				06F64834149E4ADB0047E294 /* main.m */,
+				06F64836149E4ADB0047E294 /* Password Keep-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		06F6484A149E4ADB0047E294 /* Password KeepTests */ = {
+			isa = PBXGroup;
+			children = (
+				06F64850149E4ADB0047E294 /* Password_KeepTests.h */,
+				06F64851149E4ADB0047E294 /* Password_KeepTests.m */,
+				06F6484B149E4ADB0047E294 /* Supporting Files */,
+			);
+			path = "Password KeepTests";
+			sourceTree = "<group>";
+		};
+		06F6484B149E4ADB0047E294 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				06F6484C149E4ADB0047E294 /* Password KeepTests-Info.plist */,
+				06F6484D149E4ADB0047E294 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		06F64821149E4ADB0047E294 /* Password Keep */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 06F64855149E4ADB0047E294 /* Build configuration list for PBXNativeTarget "Password Keep" */;
+			buildPhases = (
+				06F6481E149E4ADB0047E294 /* Sources */,
+				06F6481F149E4ADB0047E294 /* Frameworks */,
+				06F64820149E4ADB0047E294 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Password Keep";
+			productName = "Password Keep";
+			productReference = 06F64822149E4ADB0047E294 /* Password Keep.app */;
+			productType = "com.apple.product-type.application";
+		};
+		06F64841149E4ADB0047E294 /* Password KeepTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 06F64858149E4ADB0047E294 /* Build configuration list for PBXNativeTarget "Password KeepTests" */;
+			buildPhases = (
+				06F6483D149E4ADB0047E294 /* Sources */,
+				06F6483E149E4ADB0047E294 /* Frameworks */,
+				06F6483F149E4ADB0047E294 /* Resources */,
+				06F64840149E4ADB0047E294 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				06F64849149E4ADB0047E294 /* PBXTargetDependency */,
+			);
+			name = "Password KeepTests";
+			productName = "Password KeepTests";
+			productReference = 06F64842149E4ADB0047E294 /* Password KeepTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		06F64819149E4ADA0047E294 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 06F6481C149E4ADA0047E294 /* Build configuration list for PBXProject "Password Keep" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 06F64817149E4ADA0047E294;
+			productRefGroup = 06F64823149E4ADB0047E294 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				06F64821149E4ADB0047E294 /* Password Keep */,
+				06F64841149E4ADB0047E294 /* Password KeepTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		06F64820149E4ADB0047E294 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06F64833149E4ADB0047E294 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		06F6483F149E4ADB0047E294 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06F6484F149E4ADB0047E294 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		06F64840149E4ADB0047E294 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		06F6481E149E4ADB0047E294 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06F64835149E4ADB0047E294 /* main.m in Sources */,
+				06F64839149E4ADB0047E294 /* AppDelegate.m in Sources */,
+				06F6483C149E4ADB0047E294 /* Password_Keep.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		06F6483D149E4ADB0047E294 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06F64852149E4ADB0047E294 /* Password_KeepTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		06F64849149E4ADB0047E294 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 06F64821149E4ADB0047E294 /* Password Keep */;
+			targetProxy = 06F64848149E4ADB0047E294 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		06F64831149E4ADB0047E294 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				06F64832149E4ADB0047E294 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		06F6484D149E4ADB0047E294 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				06F6484E149E4ADB0047E294 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		06F64853149E4ADB0047E294 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		06F64854149E4ADB0047E294 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		06F64856149E4ADB0047E294 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Password Keep/Password Keep-Prefix.pch";
+				INFOPLIST_FILE = "Password Keep/Password Keep-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		06F64857149E4ADB0047E294 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Password Keep/Password Keep-Prefix.pch";
+				INFOPLIST_FILE = "Password Keep/Password Keep-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		06F64859149E4ADB0047E294 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Password Keep.app/Password Keep";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Password Keep/Password Keep-Prefix.pch";
+				INFOPLIST_FILE = "Password KeepTests/Password KeepTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		06F6485A149E4ADB0047E294 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Password Keep.app/Password Keep";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Password Keep/Password Keep-Prefix.pch";
+				INFOPLIST_FILE = "Password KeepTests/Password KeepTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		06F6481C149E4ADA0047E294 /* Build configuration list for PBXProject "Password Keep" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				06F64853149E4ADB0047E294 /* Debug */,
+				06F64854149E4ADB0047E294 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		06F64855149E4ADB0047E294 /* Build configuration list for PBXNativeTarget "Password Keep" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				06F64856149E4ADB0047E294 /* Debug */,
+				06F64857149E4ADB0047E294 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		06F64858149E4ADB0047E294 /* Build configuration list for PBXNativeTarget "Password KeepTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				06F64859149E4ADB0047E294 /* Debug */,
+				06F6485A149E4ADB0047E294 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		06F6483A149E4ADB0047E294 /* Password_Keep.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				06F6483B149E4ADB0047E294 /* Password_Keep.xcdatamodel */,
+			);
+			currentVersion = 06F6483B149E4ADB0047E294 /* Password_Keep.xcdatamodel */;
+			path = Password_Keep.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 06F64819149E4ADA0047E294 /* Project object */;
+}
