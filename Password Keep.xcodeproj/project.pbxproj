@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0618A173149E4B4F0084884E /* mainboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0618A172149E4B4F0084884E /* mainboard.storyboard */; };
+		0618A17E149E4DC50084884E /* PasswordkeepListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0618A17D149E4DC50084884E /* PasswordkeepListController.m */; };
+		064E655D149EB948002955D4 /* PasswordGeneratorController.m in Sources */ = {isa = PBXBuildFile; fileRef = 064E655C149EB948002955D4 /* PasswordGeneratorController.m */; };
+		06D3498D14A068FC005B2850 /* AddPasswordController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06D3498C14A068FC005B2850 /* AddPasswordController.m */; };
+		06D3499114A0EAC8005B2850 /* TextEntryFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 06D3499014A0EAC8005B2850 /* TextEntryFieldCell.m */; };
 		06F64827149E4ADB0047E294 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F64826149E4ADB0047E294 /* UIKit.framework */; };
 		06F64829149E4ADB0047E294 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F64828149E4ADB0047E294 /* Foundation.framework */; };
 		06F6482B149E4ADB0047E294 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F6482A149E4ADB0047E294 /* CoreGraphics.framework */; };
@@ -34,23 +39,32 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0618A172149E4B4F0084884E /* mainboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = mainboard.storyboard; sourceTree = "<group>"; };
+		0618A17C149E4DC50084884E /* PasswordkeepListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordkeepListController.h; sourceTree = "<group>"; };
+		0618A17D149E4DC50084884E /* PasswordkeepListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordkeepListController.m; sourceTree = "<group>"; };
+		064E655B149EB948002955D4 /* PasswordGeneratorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordGeneratorController.h; sourceTree = "<group>"; };
+		064E655C149EB948002955D4 /* PasswordGeneratorController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordGeneratorController.m; sourceTree = "<group>"; };
+		06D3498B14A068FC005B2850 /* AddPasswordController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddPasswordController.h; sourceTree = "<group>"; };
+		06D3498C14A068FC005B2850 /* AddPasswordController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPasswordController.m; sourceTree = "<group>"; };
+		06D3498F14A0EAC8005B2850 /* TextEntryFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextEntryFieldCell.h; sourceTree = "<group>"; };
+		06D3499014A0EAC8005B2850 /* TextEntryFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextEntryFieldCell.m; sourceTree = "<group>"; };
 		06F64822149E4ADB0047E294 /* Password Keep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Password Keep.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		06F64826149E4ADB0047E294 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		06F64828149E4ADB0047E294 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		06F6482A149E4ADB0047E294 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		06F6482C149E4ADB0047E294 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		06F64830149E4ADB0047E294 /* Password Keep-Info.plist */ = {isa = PBXFileReference; path = "Password Keep-Info.plist"; sourceTree = "<group>"; };
+		06F64830149E4ADB0047E294 /* Password Keep-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Password Keep-Info.plist"; sourceTree = "<group>"; };
 		06F64832149E4ADB0047E294 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		06F64834149E4ADB0047E294 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		06F64836149E4ADB0047E294 /* Password Keep-Prefix.pch */ = {isa = PBXFileReference; path = "Password Keep-Prefix.pch"; sourceTree = "<group>"; };
-		06F64837149E4ADB0047E294 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		06F64836149E4ADB0047E294 /* Password Keep-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Password Keep-Prefix.pch"; sourceTree = "<group>"; };
+		06F64837149E4ADB0047E294 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		06F64838149E4ADB0047E294 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		06F6483B149E4ADB0047E294 /* Password_Keep.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Password_Keep.xcdatamodel; sourceTree = "<group>"; };
 		06F64842149E4ADB0047E294 /* Password KeepTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Password KeepTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		06F64843149E4ADB0047E294 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		06F6484C149E4ADB0047E294 /* Password KeepTests-Info.plist */ = {isa = PBXFileReference; path = "Password KeepTests-Info.plist"; sourceTree = "<group>"; };
+		06F6484C149E4ADB0047E294 /* Password KeepTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Password KeepTests-Info.plist"; sourceTree = "<group>"; };
 		06F6484E149E4ADB0047E294 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		06F64850149E4ADB0047E294 /* Password_KeepTests.h */ = {isa = PBXFileReference; path = Password_KeepTests.h; sourceTree = "<group>"; };
+		06F64850149E4ADB0047E294 /* Password_KeepTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Password_KeepTests.h; sourceTree = "<group>"; };
 		06F64851149E4ADB0047E294 /* Password_KeepTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Password_KeepTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -118,6 +132,15 @@
 				06F64838149E4ADB0047E294 /* AppDelegate.m */,
 				06F6483A149E4ADB0047E294 /* Password_Keep.xcdatamodeld */,
 				06F6482F149E4ADB0047E294 /* Supporting Files */,
+				0618A172149E4B4F0084884E /* mainboard.storyboard */,
+				0618A17C149E4DC50084884E /* PasswordkeepListController.h */,
+				0618A17D149E4DC50084884E /* PasswordkeepListController.m */,
+				064E655B149EB948002955D4 /* PasswordGeneratorController.h */,
+				064E655C149EB948002955D4 /* PasswordGeneratorController.m */,
+				06D3498B14A068FC005B2850 /* AddPasswordController.h */,
+				06D3498C14A068FC005B2850 /* AddPasswordController.m */,
+				06D3498F14A0EAC8005B2850 /* TextEntryFieldCell.h */,
+				06D3499014A0EAC8005B2850 /* TextEntryFieldCell.m */,
 			);
 			path = "Password Keep";
 			sourceTree = "<group>";
@@ -223,6 +246,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				06F64833149E4ADB0047E294 /* InfoPlist.strings in Resources */,
+				0618A173149E4B4F0084884E /* mainboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +284,10 @@
 				06F64835149E4ADB0047E294 /* main.m in Sources */,
 				06F64839149E4ADB0047E294 /* AppDelegate.m in Sources */,
 				06F6483C149E4ADB0047E294 /* Password_Keep.xcdatamodeld in Sources */,
+				0618A17E149E4DC50084884E /* PasswordkeepListController.m in Sources */,
+				064E655D149EB948002955D4 /* PasswordGeneratorController.m in Sources */,
+				06D3498D14A068FC005B2850 /* AddPasswordController.m in Sources */,
+				06D3499114A0EAC8005B2850 /* TextEntryFieldCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,6 +451,7 @@
 				06F64857149E4ADB0047E294 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		06F64858149E4ADB0047E294 /* Build configuration list for PBXNativeTarget "Password KeepTests" */ = {
 			isa = XCConfigurationList;
@@ -431,6 +460,7 @@
 				06F6485A149E4ADB0047E294 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
