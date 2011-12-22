@@ -10,8 +10,9 @@
 		0618A173149E4B4F0084884E /* mainboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0618A172149E4B4F0084884E /* mainboard.storyboard */; };
 		0618A17E149E4DC50084884E /* PasswordkeepListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0618A17D149E4DC50084884E /* PasswordkeepListController.m */; };
 		064E655D149EB948002955D4 /* PasswordGeneratorController.m in Sources */ = {isa = PBXBuildFile; fileRef = 064E655C149EB948002955D4 /* PasswordGeneratorController.m */; };
-		06D3498D14A068FC005B2850 /* AddPasswordController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06D3498C14A068FC005B2850 /* AddPasswordController.m */; };
+		065AE0A114A30D82001C7ABE /* QDAddPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = 065AE0A014A30D82001C7ABE /* QDAddPassword.m */; };
 		06D3499114A0EAC8005B2850 /* TextEntryFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 06D3499014A0EAC8005B2850 /* TextEntryFieldCell.m */; };
+		06DA0DBB14A3091100118886 /* libQuickDialog.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 06DA0DB714A308EC00118886 /* libQuickDialog.a */; };
 		06F64827149E4ADB0047E294 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F64826149E4ADB0047E294 /* UIKit.framework */; };
 		06F64829149E4ADB0047E294 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F64828149E4ADB0047E294 /* Foundation.framework */; };
 		06F6482B149E4ADB0047E294 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F6482A149E4ADB0047E294 /* CoreGraphics.framework */; };
@@ -29,6 +30,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		06DA0DB414A308EC00118886 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 06DA0DAB14A308EC00118886 /* QuickDialog.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D80B0E3313E052DF00FA85CA;
+			remoteInfo = QuickDialogExample;
+		};
+		06DA0DB614A308EC00118886 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 06DA0DAB14A308EC00118886 /* QuickDialog.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2C542393145ADEBD0026A152;
+			remoteInfo = QuickDialog;
+		};
+		06DA0DB914A3090500118886 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 06DA0DAB14A308EC00118886 /* QuickDialog.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 2C542392145ADEBD0026A152;
+			remoteInfo = QuickDialog;
+		};
 		06F64848149E4ADB0047E294 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 06F64819149E4ADA0047E294 /* Project object */;
@@ -44,10 +66,11 @@
 		0618A17D149E4DC50084884E /* PasswordkeepListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordkeepListController.m; sourceTree = "<group>"; };
 		064E655B149EB948002955D4 /* PasswordGeneratorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordGeneratorController.h; sourceTree = "<group>"; };
 		064E655C149EB948002955D4 /* PasswordGeneratorController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordGeneratorController.m; sourceTree = "<group>"; };
-		06D3498B14A068FC005B2850 /* AddPasswordController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddPasswordController.h; sourceTree = "<group>"; };
-		06D3498C14A068FC005B2850 /* AddPasswordController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPasswordController.m; sourceTree = "<group>"; };
+		065AE09F14A30D82001C7ABE /* QDAddPassword.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDAddPassword.h; sourceTree = "<group>"; };
+		065AE0A014A30D82001C7ABE /* QDAddPassword.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDAddPassword.m; sourceTree = "<group>"; };
 		06D3498F14A0EAC8005B2850 /* TextEntryFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextEntryFieldCell.h; sourceTree = "<group>"; };
 		06D3499014A0EAC8005B2850 /* TextEntryFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextEntryFieldCell.m; sourceTree = "<group>"; };
+		06DA0DAB14A308EC00118886 /* QuickDialog.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = QuickDialog.xcodeproj; path = QuickDialog/QuickDialog.xcodeproj; sourceTree = "<group>"; };
 		06F64822149E4ADB0047E294 /* Password Keep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Password Keep.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		06F64826149E4ADB0047E294 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		06F64828149E4ADB0047E294 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -73,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06DA0DBB14A3091100118886 /* libQuickDialog.a in Frameworks */,
 				06F64827149E4ADB0047E294 /* UIKit.framework in Frameworks */,
 				06F64829149E4ADB0047E294 /* Foundation.framework in Frameworks */,
 				06F6482B149E4ADB0047E294 /* CoreGraphics.framework in Frameworks */,
@@ -94,9 +118,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		06DA0DAC14A308EC00118886 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				06DA0DB514A308EC00118886 /* QuickDialogExample.app */,
+				06DA0DB714A308EC00118886 /* libQuickDialog.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		06F64817149E4ADA0047E294 = {
 			isa = PBXGroup;
 			children = (
+				06DA0DAB14A308EC00118886 /* QuickDialog.xcodeproj */,
 				06F6482E149E4ADB0047E294 /* Password Keep */,
 				06F6484A149E4ADB0047E294 /* Password KeepTests */,
 				06F64825149E4ADB0047E294 /* Frameworks */,
@@ -137,10 +171,10 @@
 				0618A17D149E4DC50084884E /* PasswordkeepListController.m */,
 				064E655B149EB948002955D4 /* PasswordGeneratorController.h */,
 				064E655C149EB948002955D4 /* PasswordGeneratorController.m */,
-				06D3498B14A068FC005B2850 /* AddPasswordController.h */,
-				06D3498C14A068FC005B2850 /* AddPasswordController.m */,
 				06D3498F14A0EAC8005B2850 /* TextEntryFieldCell.h */,
 				06D3499014A0EAC8005B2850 /* TextEntryFieldCell.m */,
+				065AE09F14A30D82001C7ABE /* QDAddPassword.h */,
+				065AE0A014A30D82001C7ABE /* QDAddPassword.m */,
 			);
 			path = "Password Keep";
 			sourceTree = "<group>";
@@ -189,6 +223,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				06DA0DBA14A3090500118886 /* PBXTargetDependency */,
 			);
 			name = "Password Keep";
 			productName = "Password Keep";
@@ -232,6 +267,12 @@
 			mainGroup = 06F64817149E4ADA0047E294;
 			productRefGroup = 06F64823149E4ADB0047E294 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 06DA0DAC14A308EC00118886 /* Products */;
+					ProjectRef = 06DA0DAB14A308EC00118886 /* QuickDialog.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				06F64821149E4ADB0047E294 /* Password Keep */,
@@ -239,6 +280,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		06DA0DB514A308EC00118886 /* QuickDialogExample.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = QuickDialogExample.app;
+			remoteRef = 06DA0DB414A308EC00118886 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		06DA0DB714A308EC00118886 /* libQuickDialog.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libQuickDialog.a;
+			remoteRef = 06DA0DB614A308EC00118886 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		06F64820149E4ADB0047E294 /* Resources */ = {
@@ -286,8 +344,8 @@
 				06F6483C149E4ADB0047E294 /* Password_Keep.xcdatamodeld in Sources */,
 				0618A17E149E4DC50084884E /* PasswordkeepListController.m in Sources */,
 				064E655D149EB948002955D4 /* PasswordGeneratorController.m in Sources */,
-				06D3498D14A068FC005B2850 /* AddPasswordController.m in Sources */,
 				06D3499114A0EAC8005B2850 /* TextEntryFieldCell.m in Sources */,
+				065AE0A114A30D82001C7ABE /* QDAddPassword.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +360,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		06DA0DBA14A3090500118886 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = QuickDialog;
+			targetProxy = 06DA0DB914A3090500118886 /* PBXContainerItemProxy */;
+		};
 		06F64849149E4ADB0047E294 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 06F64821149E4ADB0047E294 /* Password Keep */;
