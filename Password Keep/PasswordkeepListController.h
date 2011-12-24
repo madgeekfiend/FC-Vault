@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "QDPassword.h"
 
-@interface PasswordkeepListController : UITableViewController
+@interface PasswordkeepListController : UITableViewController <QDPasswordDelegate>
+{
+}
+
 - (IBAction)addPassword:(id)sender;
-
--(void)loadData;
 
 @end

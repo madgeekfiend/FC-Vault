@@ -7,7 +7,7 @@
 //
 
 #import "PasswordkeepListController.h"
-#import "QDAddPassword.h"
+#import "PasswordManager.h"
 
 
 @implementation PasswordkeepListController
@@ -40,6 +40,9 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    // Let's get the list of objects to display
+    [[PasswordManager sharedApplication] reloadData];
 
 }
 
@@ -80,16 +83,12 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    return [[[PasswordManager sharedApplication] getAllPasswords] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -158,19 +157,23 @@
      */
 }
 
+#pragma mark - QDPassword Delegate
+
+-(void)didDismissQDialog
+{
+    NSLog(@"Reloading data in case anything has fired");
+    [self.tableView reloadData];
+}
+
 #pragma mark - Class specific functions
 
 - (IBAction)addPassword:(id)sender {
     // Display the add password dialog
 
-    QDAddPassword* addPassword = [QuickDialogController controllerForRoot:[QDAddPassword createPasswordForm]];
+    QDPassword* addPassword = (QDPassword*)[QuickDialogController controllerForRoot:[QDPassword createPasswordForm]];
+    addPassword.delegate = self;
     [self presentModalViewController:addPassword animated:YES];
-}
 
--(void)loadData
-{
-    // Load specific data
-    
 }
 
 

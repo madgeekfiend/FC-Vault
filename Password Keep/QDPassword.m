@@ -6,13 +6,16 @@
 //  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "QDAddPassword.h"
+#import "QDPassword.h"
+#import "PasswordManager.h"
+#import "PasswordObject.h"
 
-@interface QDAddPassword()
+@interface QDPassword()
     -(void)onSave:(QButtonElement*)buttonElement;
 @end
 
-@implementation QDAddPassword
+@implementation QDPassword
+@synthesize delegate, passwordObject;
 
 -(void)loadView
 {
@@ -34,18 +37,24 @@
 
 -(void)onSave:(QButtonElement *)buttonElement
 {
+    PasswordObject* obj = [[PasswordObject alloc] init];
+    
+    [self.root fetchValueIntoObject:obj];
+    // Save the object into the stuff
+    //[[PasswordManager sharedApplication] SavePasswordWithName:<#(NSString *)#> withLogin:<#(NSString *)#> withURL:<#(NSString *)#> withPassword:<#(NSString *)#>];
+    
     [self dismissModalViewControllerAnimated:YES];
+    [delegate didDismissQDialog];
 }
 
 +(QRootElement*)createPasswordForm
 {
     QRootElement* root = [[QRootElement alloc] init];
-    root.controllerName = @"QDAddPassword";
+    root.controllerName = @"QDPassword";
     root.grouped = YES;
     root.title = @"Add Passowrd";
     
     QSection* main = [[QSection alloc] init];
-    main.title = @"Password";
     
     QEntryElement *name = [[QEntryElement alloc] init];
     name.title = @"Name";
