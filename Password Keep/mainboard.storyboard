@@ -32,33 +32,13 @@
                     <navigationItem key="navigationItem" title="Password Keep" id="RfI-jf-fuU">
                         <barButtonItem key="rightBarButtonItem" title="Add" id="fdN-9K-lCX" userLabel="btnAdd">
                             <connections>
-                                <segue destination="0rd-nE-3Re" kind="push" id="84o-FP-Pz5"/>
+                                <action selector="addPassword:" destination="bqt-M0-kKW" id="pW9-Dz-4qf"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="43" y="-198"/>
-        </scene>
-        <scene sceneID="Nbe-JS-j9A">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wZF-xz-EpL" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tableViewController title="Add Password" id="0rd-nE-3Re" customClass="QDAddPassword" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="rP2-jT-mtl">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <connections>
-                            <outlet property="dataSource" destination="0rd-nE-3Re" id="D8a-ol-msy"/>
-                            <outlet property="delegate" destination="0rd-nE-3Re" id="eik-ov-9PN"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Add Password" id="g8X-75-c2g">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="vzq-rw-yO3"/>
-                    </navigationItem>
-                </tableViewController>
-            </objects>
-            <point key="canvasLocation" x="573" y="-198"/>
         </scene>
         <scene sceneID="prI-VE-bMc">
             <objects>
@@ -171,12 +151,9 @@
         </class>
         <class className="PasswordkeepListController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PasswordkeepListController.h"/>
-        </class>
-        <class className="QDAddPassword" superclassName="QuickDialogController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/QDAddPassword.h"/>
-        </class>
-        <class className="QuickDialogController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/QuickDialogController.h"/>
+            <relationships>
+                <relationship kind="action" name="addPassword:"/>
+            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

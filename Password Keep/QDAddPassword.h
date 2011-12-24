@@ -10,6 +10,6 @@
 
 @interface QDAddPassword : QuickDialogController
 
-+(QRootElement*)addPasswordForm;
++(QRootElement*)createPasswordForm;
 
 @end

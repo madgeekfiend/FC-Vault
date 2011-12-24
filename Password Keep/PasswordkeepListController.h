@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface PasswordkeepListController : UITableViewController
+- (IBAction)addPassword:(id)sender;
+
+-(void)loadData;
 
 @end

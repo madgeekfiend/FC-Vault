@@ -9,10 +9,12 @@
 /* Begin PBXBuildFile section */
 		0618A173149E4B4F0084884E /* mainboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0618A172149E4B4F0084884E /* mainboard.storyboard */; };
 		0618A17E149E4DC50084884E /* PasswordkeepListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0618A17D149E4DC50084884E /* PasswordkeepListController.m */; };
+		0625822914A6370800189952 /* PasswordManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0625822814A6370800189952 /* PasswordManager.m */; };
 		064E655D149EB948002955D4 /* PasswordGeneratorController.m in Sources */ = {isa = PBXBuildFile; fileRef = 064E655C149EB948002955D4 /* PasswordGeneratorController.m */; };
 		065AE0A114A30D82001C7ABE /* QDAddPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = 065AE0A014A30D82001C7ABE /* QDAddPassword.m */; };
 		06D3499114A0EAC8005B2850 /* TextEntryFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 06D3499014A0EAC8005B2850 /* TextEntryFieldCell.m */; };
 		06DA0DBB14A3091100118886 /* libQuickDialog.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 06DA0DB714A308EC00118886 /* libQuickDialog.a */; };
+		06F2ACCA14A4D4D300F3A3CA /* QDShowPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F2ACC914A4D4D300F3A3CA /* QDShowPassword.m */; };
 		06F64827149E4ADB0047E294 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F64826149E4ADB0047E294 /* UIKit.framework */; };
 		06F64829149E4ADB0047E294 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F64828149E4ADB0047E294 /* Foundation.framework */; };
 		06F6482B149E4ADB0047E294 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F6482A149E4ADB0047E294 /* CoreGraphics.framework */; };
@@ -64,6 +66,8 @@
 		0618A172149E4B4F0084884E /* mainboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = mainboard.storyboard; sourceTree = "<group>"; };
 		0618A17C149E4DC50084884E /* PasswordkeepListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordkeepListController.h; sourceTree = "<group>"; };
 		0618A17D149E4DC50084884E /* PasswordkeepListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordkeepListController.m; sourceTree = "<group>"; };
+		0625822714A6370800189952 /* PasswordManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordManager.h; sourceTree = "<group>"; };
+		0625822814A6370800189952 /* PasswordManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordManager.m; sourceTree = "<group>"; };
 		064E655B149EB948002955D4 /* PasswordGeneratorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordGeneratorController.h; sourceTree = "<group>"; };
 		064E655C149EB948002955D4 /* PasswordGeneratorController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordGeneratorController.m; sourceTree = "<group>"; };
 		065AE09F14A30D82001C7ABE /* QDAddPassword.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDAddPassword.h; sourceTree = "<group>"; };
@@ -71,6 +75,8 @@
 		06D3498F14A0EAC8005B2850 /* TextEntryFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextEntryFieldCell.h; sourceTree = "<group>"; };
 		06D3499014A0EAC8005B2850 /* TextEntryFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextEntryFieldCell.m; sourceTree = "<group>"; };
 		06DA0DAB14A308EC00118886 /* QuickDialog.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = QuickDialog.xcodeproj; path = QuickDialog/QuickDialog.xcodeproj; sourceTree = "<group>"; };
+		06F2ACC814A4D4D300F3A3CA /* QDShowPassword.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDShowPassword.h; sourceTree = "<group>"; };
+		06F2ACC914A4D4D300F3A3CA /* QDShowPassword.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDShowPassword.m; sourceTree = "<group>"; };
 		06F64822149E4ADB0047E294 /* Password Keep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Password Keep.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		06F64826149E4ADB0047E294 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		06F64828149E4ADB0047E294 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -175,6 +181,10 @@
 				06D3499014A0EAC8005B2850 /* TextEntryFieldCell.m */,
 				065AE09F14A30D82001C7ABE /* QDAddPassword.h */,
 				065AE0A014A30D82001C7ABE /* QDAddPassword.m */,
+				06F2ACC814A4D4D300F3A3CA /* QDShowPassword.h */,
+				06F2ACC914A4D4D300F3A3CA /* QDShowPassword.m */,
+				0625822714A6370800189952 /* PasswordManager.h */,
+				0625822814A6370800189952 /* PasswordManager.m */,
 			);
 			path = "Password Keep";
 			sourceTree = "<group>";
@@ -346,6 +356,8 @@
 				064E655D149EB948002955D4 /* PasswordGeneratorController.m in Sources */,
 				06D3499114A0EAC8005B2850 /* TextEntryFieldCell.m in Sources */,
 				065AE0A114A30D82001C7ABE /* QDAddPassword.m in Sources */,
+				06F2ACCA14A4D4D300F3A3CA /* QDShowPassword.m in Sources */,
+				0625822914A6370800189952 /* PasswordManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

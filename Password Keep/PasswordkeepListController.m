@@ -7,6 +7,7 @@
 //
 
 #import "PasswordkeepListController.h"
+#import "QDAddPassword.h"
 
 
 @implementation PasswordkeepListController
@@ -39,8 +40,7 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStyleBordered target:nil action:nil];
+
 }
 
 - (void)viewDidUnload
@@ -157,5 +157,21 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
 }
+
+#pragma mark - Class specific functions
+
+- (IBAction)addPassword:(id)sender {
+    // Display the add password dialog
+
+    QDAddPassword* addPassword = [QuickDialogController controllerForRoot:[QDAddPassword createPasswordForm]];
+    [self presentModalViewController:addPassword animated:YES];
+}
+
+-(void)loadData
+{
+    // Load specific data
+    
+}
+
 
 @end
