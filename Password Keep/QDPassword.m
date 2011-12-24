@@ -41,7 +41,7 @@
     
     [self.root fetchValueIntoObject:obj];
     // Save the object into the stuff
-    //[[PasswordManager sharedApplication] SavePasswordWithName:<#(NSString *)#> withLogin:<#(NSString *)#> withURL:<#(NSString *)#> withPassword:<#(NSString *)#>];
+    [[PasswordManager sharedApplication] SavePasswordWithName:obj.name withLogin:obj.login withURL:obj.url withPassword:obj.password];
     
     [self dismissModalViewControllerAnimated:YES];
     [delegate didDismissQDialog];

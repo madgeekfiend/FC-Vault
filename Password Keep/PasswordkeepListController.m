@@ -93,14 +93,18 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"password";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     
     // Configure the cell...
+    NSManagedObject* object = (NSManagedObject*)[[[PasswordManager sharedApplication] getAllPasswords] objectAtIndex:indexPath.row];
+    
+    cell.textLabel.text = [object valueForKey:@"name"];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"url: %@", [object valueForKey:@"url"]];
     
     return cell;
 }
