@@ -15,7 +15,7 @@
 @end
 
 @implementation QDPassword
-@synthesize delegate, passwordObject;
+@synthesize delegate;
 
 -(void)loadView
 {
@@ -45,6 +45,34 @@
     
     [self dismissModalViewControllerAnimated:YES];
     [delegate didDismissQDialog];
+}
+
+#pragma mark - Form Creation
+
++(QRootElement*)createPasswordDisplayForm:(NSManagedObject*)pw
+{
+    QRootElement *root = [[QRootElement alloc] init];
+    root.controllerName = @"QDPassword";
+    root.grouped = YES;
+    root.title = @"Password Info";
+    
+    QSection *main = [[QSection alloc] init];
+    QLabelElement *name = [[QLabelElement alloc] initWithTitle:@"Name" Value:[pw valueForKey:@"name"] ];
+    [main addElement: name];
+    [root addSection:main];
+    
+    QSection *details = [[QSection alloc] init];
+    QLabelElement *login = [[QLabelElement alloc] initWithTitle:@"Login" Value:[pw valueForKey:@"login"]];
+    [details addElement:login];
+    QLabelElement *password = [[QLabelElement alloc] initWithTitle:@"Password" Value:[pw valueForKey: @"password"]];
+    [details addElement: password];
+    QLabelElement *url = [[QLabelElement alloc] initWithTitle:@"URL" Value:[pw valueForKey:@"url"]];
+    [details addElement: url];
+    [root addSection:details];
+    
+    
+    return root;
+    
 }
 
 +(QRootElement*)createPasswordForm
@@ -94,6 +122,31 @@
     [buttonSection addElement:btnSave];
     
     [root addSection:buttonSection];
+    
+    return root;
+}
+
++(QRootElement*)createGeneratePassword
+{
+    QRootElement *root = [[QRootElement alloc] init];
+    root.title = @"Generate Password";
+    root.grouped = YES;
+    root.controllerName = @"QDPassword";
+    
+    QSection *password = [[QSection alloc] init];
+    QLabelElement *generated = [[QLabelElement alloc] initWithTitle:@"Password" Value:@"Not Generated"];
+    [password addElement:generated];
+    QEntryElement *length = [[QEntryElement alloc] initWithTitle:@"Length" Value:@"8"];
+    [password addElement:length];    
+    // Add Footer stuff to explain what is going on
+    password.footer = @"Press generate to have the program create a random string for your password. The default length of the password is 8 characters long.";
+    [root addSection:password];
+    
+    // Button section
+    QSection *buttons = [[QSection alloc] init];
+    QButtonElement *btnGenerate = [[QButtonElement alloc] initWithTitle:@"Generate"];
+    [buttons addElement:btnGenerate];
+    [root addSection:buttons];
     
     return root;
 }

@@ -17,6 +17,7 @@
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
+       
     }
     return self;
 }
@@ -118,19 +119,20 @@
 }
 */
 
-/*
+
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
+        [[PasswordManager sharedApplication] deletePasswordAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }   
     else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
-*/
+
 
 /*
 // Override to support rearranging the table view.
@@ -159,6 +161,12 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
+    NSManagedObject* pwo =  [[[PasswordManager sharedApplication] getAllPasswords] objectAtIndex:indexPath.row];
+    QDPassword* passwordDetail = (QDPassword*)[QuickDialogController controllerForRoot:[QDPassword createPasswordDisplayForm:pwo] ];
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:nil action:nil];
+    self.navigationItem.backBarButtonItem = backButton;
+    
+    [self.navigationController pushViewController:passwordDetail animated:YES];
 }
 
 #pragma mark - QDPassword Delegate

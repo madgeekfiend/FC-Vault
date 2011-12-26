@@ -21,12 +21,12 @@
 @interface QDPassword : QuickDialogController
   {
       id<QDPasswordDelegate> delegate;
-      id passwordObject;
   }
 
-@property(nonatomic, retain) id passwordObject;
 @property(nonatomic, retain) id<QDPasswordDelegate> delegate;
 
 +(QRootElement*)createPasswordForm;
++(QRootElement*)createPasswordDisplayForm:(NSManagedObject*)pw;
++(QRootElement*)createGeneratePassword;
 
 @end

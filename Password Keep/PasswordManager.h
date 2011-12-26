@@ -21,5 +21,7 @@
 -(NSArray*)getAllPasswords;
 -(void)reloadData;
 -(void)SavePasswordWithName:(NSString*)name withLogin:(NSString*)login withURL:(NSString*)url withPassword:(NSString*)password;
+-(void)deletePassword:(NSManagedObject*)object;
+-(void)deletePasswordAtIndex:(int)index;
 
 @end

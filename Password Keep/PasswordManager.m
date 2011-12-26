@@ -71,7 +71,22 @@ static PasswordManager* _onlyInstance = nil;
     
     NSError *error;
     [context save:&error];
+    
+    // Now reload data again
+    [self reloadData];
 }
 
+-(void)deletePassword:(NSManagedObject *)object
+{
+    [context deleteObject:object];
+}
+
+-(void)deletePasswordAtIndex:(int)index
+{
+    NSManagedObject* object = [data objectAtIndex:index];
+    [self deletePassword:object];
+    // reload data
+    [self reloadData];
+}
 
 @end
