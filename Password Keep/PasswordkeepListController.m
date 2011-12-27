@@ -103,9 +103,10 @@
     
     // Configure the cell...
     NSManagedObject* object = (NSManagedObject*)[[[PasswordManager sharedApplication] getAllPasswords] objectAtIndex:indexPath.row];
-    
-    cell.textLabel.text = [object valueForKey:@"name"];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"url: %@", [object valueForKey:@"url"]];
+    NSString* nameText = 0 == [[object valueForKey:@"name"] length] ? @"(NO NAME)" : [object valueForKey:@"name"];
+    cell.textLabel.text = nameText;
+    NSString* urlText = 0 == [[object valueForKey:@"url"] length] ? @"NONE" : [object valueForKey:@"url"];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"url: %@", urlText];
     
     return cell;
 }
