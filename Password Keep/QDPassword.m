@@ -64,6 +64,7 @@
     
     editObj = nil;
     
+    [[PasswordManager sharedApplication] saveContext];
     //[self.navigationController popViewControllerAnimated:YES];
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
