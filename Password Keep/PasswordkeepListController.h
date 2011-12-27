@@ -14,5 +14,6 @@
 }
 
 - (IBAction)addPassword:(id)sender;
+-(void)editPassword:(id)pw;
 
 @end

@@ -105,4 +105,9 @@ static PasswordManager* _onlyInstance = nil;
     [self reloadData];
 }
 
+-(void)saveContext
+{
+    [context save:nil];
+}
+
 @end

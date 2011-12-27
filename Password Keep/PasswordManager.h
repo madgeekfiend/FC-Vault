@@ -24,5 +24,6 @@
 -(void)deletePassword:(NSManagedObject*)object;
 -(void)deletePasswordAtIndex:(int)index;
 -(NSString *)genRandStringLength: (int)len;
+-(void)saveContext;
 
 @end

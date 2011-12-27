@@ -21,9 +21,11 @@
 @interface QDPassword : QuickDialogController
   {
       id<QDPasswordDelegate> delegate;
+      NSManagedObject* editObj;
   }
 
 @property(nonatomic, retain) id<QDPasswordDelegate> delegate;
+@property(nonatomic,retain) NSManagedObject* editObj;
 
 +(QRootElement*)createPasswordForm;
 +(QRootElement*)createPasswordDisplayForm:(NSManagedObject*)pw;

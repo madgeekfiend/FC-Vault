@@ -12,10 +12,11 @@
 
 @interface QDPassword()
     -(void)onSave:(QButtonElement*)buttonElement;
+    -(void)onEdit;
 @end
 
 @implementation QDPassword
-@synthesize delegate;
+@synthesize delegate, editObj;
 
 -(void)loadView
 {
@@ -49,6 +50,24 @@
     [delegate didDismissQDialog];
 }
 
+-(void)onEdit
+{
+    if ( !editObj ) return; //Just get out of here this is broke
+    
+    PasswordObject *obj = [[PasswordObject alloc] init];
+    [self.root fetchValueIntoObject:obj];
+    
+    [editObj setValue:obj.name forKey:@"name"];
+    [editObj setValue:obj.login forKey:@"login"];
+    [editObj setValue:obj.url forKey:@"url"];
+    [editObj setValue:obj.password forKey:@"password"];
+    
+    editObj = nil;
+    
+    //[self.navigationController popViewControllerAnimated:YES];
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
 #pragma mark - Form Creation
 
 +(QRootElement*)createPasswordDisplayForm:(NSManagedObject*)pw
@@ -57,6 +76,7 @@
     root.controllerName = @"QDPassword";
     root.grouped = YES;
     root.title = @"Password Info";
+    
     
     QSection *main = [[QSection alloc] init];
     QLabelElement *name = [[QLabelElement alloc] initWithTitle:@"Name" Value:[pw valueForKey:@"name"] ];
@@ -71,7 +91,6 @@
     QLabelElement *url = [[QLabelElement alloc] initWithTitle:@"URL" Value:[pw valueForKey:@"url"]];
     [details addElement: url];
     [root addSection:details];
-    
     
     return root;
     
@@ -105,7 +124,6 @@
     QEntryElement *password = [[QEntryElement alloc] init];
     password.title = @"Password";
     password.key = @"password";
-    password.secureTextEntry = YES;
     password.placeholder = @"Enter password";
     [detail addElement:password];
     QEntryElement *url = [[QEntryElement alloc] init];
@@ -158,14 +176,12 @@
     QRootElement* root = [[QRootElement alloc] init];
     root.controllerName = @"QDPassword";
     root.grouped = YES;
-    root.title = @"Add Passowrd";
+    root.title = @"Edit Password";
     
     QSection* main = [[QSection alloc] init];
-    
-    QEntryElement *name = [[QEntryElement alloc] init];
-    name.title = @"Name";
+
+    QEntryElement *name = [[QEntryElement alloc] initWithTitle:@"Name" Value:[pw valueForKey:@"name"] Placeholder:@"Name"];    
     name.key = @"name";
-    name.value = [pw valueForKey:@"name"];
     [main addElement:name];
     
     [root addSection:main];
@@ -173,20 +189,13 @@
     QSection* detail = [[QSection alloc] init];
     detail.title = @"Details";
     
-    QEntryElement* login = [[QEntryElement alloc] init];
-    login.title = @"Login";
+    QEntryElement* login = [[QEntryElement alloc] initWithTitle:@"Login" Value:[pw valueForKey:@"login"] Placeholder:@"Login Information"];
     login.key = @"login";
-    login.value = [pw valueForKey:@"login"];
     [detail addElement:login];
-    QEntryElement *password = [[QEntryElement alloc] init];
-    password.title = @"Password";
+    QEntryElement *password = [[QEntryElement alloc] initWithTitle:@"Password" Value:[pw valueForKey:@"password"] Placeholder:@"Your password"];
     password.key = @"password";
-    password.secureTextEntry = YES;
-    password.value = [pw valueForKey:@"password"];
     [detail addElement:password];
-    QEntryElement *url = [[QEntryElement alloc] init];
-    url.title = @"URL";
-    url.value = [pw valueForKey:@"url"];
+    QEntryElement *url = [[QEntryElement alloc] initWithTitle:@"URL" Value:[pw valueForKey:@"url"] Placeholder:@"URL (OPTIONAL)"];
     url.key = @"url";
     [detail addElement:url];
     
@@ -196,7 +205,7 @@
     QSection* buttonSection = [[QSection alloc] init];
     QButtonElement* btnSave = [[QButtonElement alloc] init];
     btnSave.title = @"Save";
-    btnSave.controllerAction = @"onSave:";
+    btnSave.controllerAction = @"onEdit";
     [buttonSection addElement:btnSave];
     
     [root addSection:buttonSection];

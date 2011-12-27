@@ -166,6 +166,10 @@
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:nil action:nil];
     self.navigationItem.backBarButtonItem = backButton;
     
+    UIBarButtonItem *editButton = [[UIBarButtonItem alloc] initWithTitle:@"Edit" style:UIBarButtonItemStyleBordered target:self action:@selector(editPassword:) ];
+    editButton.tag = indexPath.row;
+    passwordDetail.navigationItem.rightBarButtonItem = editButton;
+    
     [self.navigationController pushViewController:passwordDetail animated:YES];
 }
 
@@ -179,7 +183,18 @@
 
 #pragma mark - Delegate functions
 
-- (IBAction)addPassword:(id)sender {
+// The tag of the button will have the array
+-(void)editPassword:(id)sender
+{
+    UIBarButtonItem* btn = (UIBarButtonItem*)sender;
+    NSManagedObject* pwo =  [[[PasswordManager sharedApplication] getAllPasswords] objectAtIndex:btn.tag];
+    QDPassword *editForm = (QDPassword*)[QuickDialogController controllerForRoot:[QDPassword createPasswordEditForm:pwo]];
+    editForm.editObj = pwo;
+    [self.navigationController pushViewController:editForm animated:YES];
+}
+
+- (IBAction)addPassword:(id)sender 
+{
     // Display the add password dialog
 
     QDPassword* addPassword = (QDPassword*)[QuickDialogController controllerForRoot:[QDPassword createPasswordForm]];
