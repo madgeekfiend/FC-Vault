@@ -11,7 +11,6 @@
 		0618A17E149E4DC50084884E /* PasswordkeepListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0618A17D149E4DC50084884E /* PasswordkeepListController.m */; };
 		0625822914A6370800189952 /* PasswordManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0625822814A6370800189952 /* PasswordManager.m */; };
 		0625822C14A6655D00189952 /* PasswordObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 0625822B14A6655D00189952 /* PasswordObject.m */; };
-		064E655D149EB948002955D4 /* PasswordGeneratorController.m in Sources */ = {isa = PBXBuildFile; fileRef = 064E655C149EB948002955D4 /* PasswordGeneratorController.m */; };
 		065AE0A114A30D82001C7ABE /* QDPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = 065AE0A014A30D82001C7ABE /* QDPassword.m */; };
 		06D3499114A0EAC8005B2850 /* TextEntryFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 06D3499014A0EAC8005B2850 /* TextEntryFieldCell.m */; };
 		06DA0DBB14A3091100118886 /* libQuickDialog.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 06DA0DB714A308EC00118886 /* libQuickDialog.a */; };
@@ -63,6 +62,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		060BEE2414A8F51A00C65856 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		0618A172149E4B4F0084884E /* mainboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = mainboard.storyboard; sourceTree = "<group>"; };
 		0618A17C149E4DC50084884E /* PasswordkeepListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordkeepListController.h; sourceTree = "<group>"; };
 		0618A17D149E4DC50084884E /* PasswordkeepListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordkeepListController.m; sourceTree = "<group>"; };
@@ -70,8 +70,6 @@
 		0625822814A6370800189952 /* PasswordManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordManager.m; sourceTree = "<group>"; };
 		0625822A14A6655D00189952 /* PasswordObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordObject.h; sourceTree = "<group>"; };
 		0625822B14A6655D00189952 /* PasswordObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordObject.m; sourceTree = "<group>"; };
-		064E655B149EB948002955D4 /* PasswordGeneratorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordGeneratorController.h; sourceTree = "<group>"; };
-		064E655C149EB948002955D4 /* PasswordGeneratorController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordGeneratorController.m; sourceTree = "<group>"; };
 		065AE09F14A30D82001C7ABE /* QDPassword.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDPassword.h; sourceTree = "<group>"; };
 		065AE0A014A30D82001C7ABE /* QDPassword.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDPassword.m; sourceTree = "<group>"; };
 		06D3498F14A0EAC8005B2850 /* TextEntryFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextEntryFieldCell.h; sourceTree = "<group>"; };
@@ -136,6 +134,7 @@
 		06F64817149E4ADA0047E294 = {
 			isa = PBXGroup;
 			children = (
+				060BEE2414A8F51A00C65856 /* Default.png */,
 				06DA0DAB14A308EC00118886 /* QuickDialog.xcodeproj */,
 				06F6482E149E4ADB0047E294 /* Password Keep */,
 				06F6484A149E4ADB0047E294 /* Password KeepTests */,
@@ -175,8 +174,6 @@
 				0618A172149E4B4F0084884E /* mainboard.storyboard */,
 				0618A17C149E4DC50084884E /* PasswordkeepListController.h */,
 				0618A17D149E4DC50084884E /* PasswordkeepListController.m */,
-				064E655B149EB948002955D4 /* PasswordGeneratorController.h */,
-				064E655C149EB948002955D4 /* PasswordGeneratorController.m */,
 				06D3498F14A0EAC8005B2850 /* TextEntryFieldCell.h */,
 				06D3499014A0EAC8005B2850 /* TextEntryFieldCell.m */,
 				065AE09F14A30D82001C7ABE /* QDPassword.h */,
@@ -353,7 +350,6 @@
 				06F64839149E4ADB0047E294 /* AppDelegate.m in Sources */,
 				06F6483C149E4ADB0047E294 /* Password_Keep.xcdatamodeld in Sources */,
 				0618A17E149E4DC50084884E /* PasswordkeepListController.m in Sources */,
-				064E655D149EB948002955D4 /* PasswordGeneratorController.m in Sources */,
 				06D3499114A0EAC8005B2850 /* TextEntryFieldCell.m in Sources */,
 				065AE0A114A30D82001C7ABE /* QDPassword.m in Sources */,
 				0625822914A6370800189952 /* PasswordManager.m in Sources */,

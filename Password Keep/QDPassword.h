@@ -28,5 +28,6 @@
 +(QRootElement*)createPasswordForm;
 +(QRootElement*)createPasswordDisplayForm:(NSManagedObject*)pw;
 +(QRootElement*)createGeneratePassword;
++(QRootElement*)createPasswordEditForm:(NSManagedObject*)pw;
 
 @end

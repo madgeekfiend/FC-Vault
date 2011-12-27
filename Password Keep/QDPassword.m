@@ -35,6 +35,8 @@
     
 }
 
+#pragma mark - Button actions
+
 -(void)onSave:(QButtonElement *)buttonElement
 {
     PasswordObject* obj = [[PasswordObject alloc] init];
@@ -43,7 +45,7 @@
     // Save the object into the stuff
     [[PasswordManager sharedApplication] SavePasswordWithName:obj.name withLogin:obj.login withURL:obj.url withPassword:obj.password];
     
-    [self dismissModalViewControllerAnimated:YES];
+    [self.navigationController popViewControllerAnimated:YES];
     [delegate didDismissQDialog];
 }
 
@@ -149,6 +151,57 @@
     [root addSection:buttons];
     
     return root;
+}
+
++(QRootElement*)createPasswordEditForm:(NSManagedObject*)pw
+{
+    QRootElement* root = [[QRootElement alloc] init];
+    root.controllerName = @"QDPassword";
+    root.grouped = YES;
+    root.title = @"Add Passowrd";
+    
+    QSection* main = [[QSection alloc] init];
+    
+    QEntryElement *name = [[QEntryElement alloc] init];
+    name.title = @"Name";
+    name.key = @"name";
+    name.value = [pw valueForKey:@"name"];
+    [main addElement:name];
+    
+    [root addSection:main];
+    
+    QSection* detail = [[QSection alloc] init];
+    detail.title = @"Details";
+    
+    QEntryElement* login = [[QEntryElement alloc] init];
+    login.title = @"Login";
+    login.key = @"login";
+    login.value = [pw valueForKey:@"login"];
+    [detail addElement:login];
+    QEntryElement *password = [[QEntryElement alloc] init];
+    password.title = @"Password";
+    password.key = @"password";
+    password.secureTextEntry = YES;
+    password.value = [pw valueForKey:@"password"];
+    [detail addElement:password];
+    QEntryElement *url = [[QEntryElement alloc] init];
+    url.title = @"URL";
+    url.value = [pw valueForKey:@"url"];
+    url.key = @"url";
+    [detail addElement:url];
+    
+    [root addSection:detail];
+    
+    // Button Section
+    QSection* buttonSection = [[QSection alloc] init];
+    QButtonElement* btnSave = [[QButtonElement alloc] init];
+    btnSave.title = @"Save";
+    btnSave.controllerAction = @"onSave:";
+    [buttonSection addElement:btnSave];
+    
+    [root addSection:buttonSection];
+    
+    return root;    
 }
 
 @end

@@ -42,6 +42,20 @@ static PasswordManager* _onlyInstance = nil;
 	return self;
 }
 
+#pragma mark - Password Generator
+
+-(NSString *) genRandStringLength: (int) len {
+    NSString *letters = @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    
+    NSMutableString *randomString = [NSMutableString stringWithCapacity: len];
+    
+    for (int i=0; i<len; i++) {
+        [randomString appendFormat: @"%c", [letters characterAtIndex: rand()%[letters length]]];
+    }
+    
+    return randomString;
+}
+
 #pragma mark - Core Data Ops
 -(NSArray*)getAllPasswords
 {
@@ -79,6 +93,8 @@ static PasswordManager* _onlyInstance = nil;
 -(void)deletePassword:(NSManagedObject *)object
 {
     [context deleteObject:object];
+    NSError *error;
+    [context save:&error];
 }
 
 -(void)deletePasswordAtIndex:(int)index

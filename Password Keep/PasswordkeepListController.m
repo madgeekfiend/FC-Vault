@@ -177,14 +177,16 @@
     [self.tableView reloadData];
 }
 
-#pragma mark - Class specific functions
+#pragma mark - Delegate functions
 
 - (IBAction)addPassword:(id)sender {
     // Display the add password dialog
 
     QDPassword* addPassword = (QDPassword*)[QuickDialogController controllerForRoot:[QDPassword createPasswordForm]];
     addPassword.delegate = self;
-    [self presentModalViewController:addPassword animated:YES];
+    UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStyleBordered target:nil action:nil];
+    self.navigationItem.backBarButtonItem = cancelButton;
+    [self.navigationController pushViewController:addPassword animated:YES];
 
 }
 
