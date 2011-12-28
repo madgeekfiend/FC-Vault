@@ -106,7 +106,7 @@
     NSString* nameText = 0 == [[object valueForKey:@"name"] length] ? @"(NO NAME)" : [object valueForKey:@"name"];
     cell.textLabel.text = nameText;
     NSString* urlText = 0 == [[object valueForKey:@"url"] length] ? @"NONE" : [object valueForKey:@"url"];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"url: %@", urlText];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"URL: %@", urlText];
     
     return cell;
 }
