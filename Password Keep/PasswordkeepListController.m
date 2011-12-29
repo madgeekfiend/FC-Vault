@@ -207,4 +207,14 @@
 }
 
 
+- (IBAction)displaySettingsDialog:(id)sender {
+
+    QDPassword *settingsDlg = (QDPassword*)[QuickDialogController controllerForRoot:[QDPassword createSettingsPage]];
+    UIBarButtonItem *cancel = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStyleBordered target:nil action:nil];
+    self.navigationItem.backBarButtonItem = cancel;
+    [self.navigationController pushViewController:settingsDlg animated:YES];
+    
+}
+
+
 @end

@@ -12,6 +12,7 @@
 @interface PasswordkeepListController : UITableViewController <QDPasswordDelegate>
 {
 }
+- (IBAction)displaySettingsDialog:(id)sender;
 
 - (IBAction)addPassword:(id)sender;
 -(void)editPassword:(id)pw;

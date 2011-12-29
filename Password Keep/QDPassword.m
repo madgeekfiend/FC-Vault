@@ -13,6 +13,8 @@
 @interface QDPassword()
     -(void)onSave:(QButtonElement*)buttonElement;
     -(void)onEdit;
+    -(void)onSettings:(QButtonElement*)buttonElement;
+    -(void)onCancel;
 @end
 
 @implementation QDPassword
@@ -37,6 +39,17 @@
 }
 
 #pragma mark - Button actions
+
+-(void)onCancel
+{
+    NSLog(@"CANCELLED PUSHED");
+    [self dismissModalViewControllerAnimated:YES];
+}
+
+-(void)onSettings:(QButtonElement *)buttonElement
+{
+    
+}
 
 -(void)onSave:(QButtonElement *)buttonElement
 {
@@ -212,6 +225,38 @@
     [root addSection:buttonSection];
     
     return root;    
+}
+
++(QRootElement*)createSettingsPage
+{
+    QRootElement *root = [[QRootElement alloc] init];
+    root.title = @"Settings";
+    root.controllerName = @"QDPassword";
+    root.controllerAction = @"onSettings:";
+    root.grouped = YES;
+    
+    QSection *detail = [[QSection alloc] init];
+    QBooleanElement *usePassword = [[QBooleanElement alloc] initWithTitle:@"Use Password" BoolValue:NO];
+    [detail addElement:usePassword];
+    QEntryElement *password = [[QEntryElement alloc] initWithTitle:@"Password" Value:@"" Placeholder:@"Enter Password"];
+    [detail addElement:password];
+    [root addSection:detail];
+    
+    QSection *clear = [[QSection alloc] init];
+    QButtonElement *ClearAll = [[QButtonElement alloc] initWithTitle:@"Clear All"];
+    [clear addElement:ClearAll];
+    [root addSection:clear];
+    
+    QSection *footer = [[QSection alloc] init];
+    QButtonElement *save = [[QButtonElement alloc] initWithTitle:@"Save"];
+    [footer addElement:save];
+    QButtonElement *cancel = [[QButtonElement alloc] initWithTitle:@"Cancel"];
+    cancel.controllerAction = @"onCancel";
+    [footer addElement:cancel];
+    [root addSection: footer];
+    
+    
+    return root;
 }
 
 @end

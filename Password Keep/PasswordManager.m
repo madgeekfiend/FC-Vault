@@ -11,6 +11,10 @@
 
 static PasswordManager* _onlyInstance = nil;
 
+@interface PasswordManager()
+    -(void)saveContext;
+@end
+
 @implementation PasswordManager
 
 #pragma mark - Object Instantiation
@@ -82,10 +86,7 @@ static PasswordManager* _onlyInstance = nil;
     [newPassword setValue:login forKey:@"login"];
     [newPassword setValue:url forKey:@"url"];
     [newPassword setValue:password forKey:@"password"];
-    
-    NSError *error;
-    [context save:&error];
-    
+    [self saveContext];
     // Now reload data again
     [self reloadData];
 }
@@ -93,8 +94,7 @@ static PasswordManager* _onlyInstance = nil;
 -(void)deletePassword:(NSManagedObject *)object
 {
     [context deleteObject:object];
-    NSError *error;
-    [context save:&error];
+    [self saveContext];
 }
 
 -(void)deletePasswordAtIndex:(int)index
@@ -107,7 +107,8 @@ static PasswordManager* _onlyInstance = nil;
 
 -(void)saveContext
 {
-    [context save:nil];
+    AppDelegate* delegate = [[UIApplication sharedApplication] delegate];
+    [delegate saveContext];
 }
 
 @end
