@@ -15,6 +15,7 @@
     -(void)onEdit;
     -(void)onSettings:(QButtonElement*)buttonElement;
     -(void)onCancel;
+    -(void)onClearAll;
 @end
 
 @implementation QDPassword
@@ -49,6 +50,13 @@
 -(void)onSettings:(QButtonElement *)buttonElement
 {
     
+}
+
+-(void)onClearAll
+{
+    UIAlertView *confirm = [[UIAlertView alloc] initWithTitle:@"Clear All" message:@"This will erase all your data. This can not be undone." delegate:self cancelButtonTitle:@"Back" otherButtonTitles:@"Erase Data", nil];
+    confirm.tag = 100;
+    [confirm show];
 }
 
 -(void)onSave:(QButtonElement *)buttonElement
@@ -244,19 +252,30 @@
     
     QSection *clear = [[QSection alloc] init];
     QButtonElement *ClearAll = [[QButtonElement alloc] initWithTitle:@"Clear All"];
+    ClearAll.controllerAction = @"onClearAll";
     [clear addElement:ClearAll];
     [root addSection:clear];
     
     QSection *footer = [[QSection alloc] init];
     QButtonElement *save = [[QButtonElement alloc] initWithTitle:@"Save"];
     [footer addElement:save];
-    QButtonElement *cancel = [[QButtonElement alloc] initWithTitle:@"Cancel"];
-    cancel.controllerAction = @"onCancel";
-    [footer addElement:cancel];
     [root addSection: footer];
     
-    
     return root;
+}
+
+#pragma mark - UIAlertViewDelegate
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if ( 100 == alertView.tag )
+    {
+        if ( 1 == buttonIndex )
+        {
+            NSLog(@"Erasing all data");
+            [[PasswordManager sharedApplication] eraseAll];
+        }
+    }
 }
 
 @end

@@ -18,7 +18,7 @@
 @end
 
 
-@interface QDPassword : QuickDialogController
+@interface QDPassword : QuickDialogController <UIAlertViewDelegate>
   {
       id<QDPasswordDelegate> delegate;
       NSManagedObject* editObj;

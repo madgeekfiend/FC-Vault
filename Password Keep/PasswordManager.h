@@ -13,6 +13,7 @@
     NSManagedObjectContext* context;
     NSEntityDescription* passwordsEntity;
     NSArray* data;
+    BOOL isPassword;
 }
 
 
@@ -25,5 +26,11 @@
 -(void)deletePasswordAtIndex:(int)index;
 -(NSString *)genRandStringLength: (int)len;
 -(void)saveContext;
+-(void)eraseAll;
+
+// Password stuff
+-(BOOL)isPasswordRequired;
+-(void)flipPasswordRequired:(BOOL)req;
+-(void)setPassword:(NSInteger*)pwd;
 
 @end

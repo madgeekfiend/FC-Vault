@@ -61,6 +61,19 @@ static PasswordManager* _onlyInstance = nil;
 }
 
 #pragma mark - Core Data Ops
+
+-(void)eraseAll
+{
+    for (NSManagedObject *obj in data)
+    {
+        [context deleteObject:obj];
+    }
+    
+    // Now save the context
+    [self saveContext];
+    [self reloadData];
+}
+
 -(NSArray*)getAllPasswords
 {
     return data;
@@ -109,6 +122,24 @@ static PasswordManager* _onlyInstance = nil;
 {
     AppDelegate* delegate = [[UIApplication sharedApplication] delegate];
     [delegate saveContext];
+}
+
+#pragma mark - Password
+
+-(BOOL)isPasswordRequired
+{
+   
+    return NO;
+}
+
+-(void)flipPasswordRequired:(BOOL)req
+{
+    
+}
+
+-(void)setPassword:(NSInteger*)pwd
+{
+    
 }
 
 @end
