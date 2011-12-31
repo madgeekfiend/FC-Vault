@@ -10,6 +10,8 @@
 #import "AppDelegate.h"
 
 static PasswordManager* _onlyInstance = nil;
+NSString* const USE_PASSWORD_KEY = @"usePassword";
+NSString* const PASSWORD_VALUE = @"password";
 
 @interface PasswordManager()
     -(void)saveContext;
@@ -41,6 +43,11 @@ static PasswordManager* _onlyInstance = nil;
         context = [delegate managedObjectContext];
         NSLog(@"Setting entity description");
         passwordsEntity = [NSEntityDescription entityForName:@"Password" inManagedObjectContext:context];
+        NSLog(@"Getting user defaults");
+        defaults = [NSUserDefaults standardUserDefaults];
+        // get the password and if they're using it
+        usePassword = [defaults boolForKey:USE_PASSWORD_KEY];
+        passowrd = [defaults stringForKey:PASSWORD_VALUE];
 	}
     
 	return self;
@@ -129,17 +136,25 @@ static PasswordManager* _onlyInstance = nil;
 -(BOOL)isPasswordRequired
 {
    
-    return NO;
+    return usePassword;
 }
 
 -(void)flipPasswordRequired:(BOOL)req
 {
-    
+    usePassword = req;
+    [defaults setBool:req forKey:USE_PASSWORD_KEY];
 }
 
--(void)setPassword:(NSInteger*)pwd
+-(void)setPassword:(NSString*)pwd
 {
-    
+    passowrd = pwd;
+    [defaults setValue:pwd forKey:PASSWORD_VALUE];
 }
+
+-(NSString*)getPassword
+{
+    return passowrd;
+}
+
 
 @end

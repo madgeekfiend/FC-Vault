@@ -57,6 +57,15 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [self.tableView reloadData];
+    
+    // Let's check if login is required
+    if ( [[PasswordManager sharedApplication] isPasswordRequired] )
+    {
+        // Password is required pop the login box
+        QDPassword *loginDlg = (QDPassword*)[QuickDialogController controllerForRoot:[QDPassword createLoginPage]];
+        [self presentModalViewController:loginDlg animated:YES];
+        
+    }
     [super viewWillAppear:animated];
 }
 

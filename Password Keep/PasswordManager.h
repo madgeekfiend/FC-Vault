@@ -13,7 +13,10 @@
     NSManagedObjectContext* context;
     NSEntityDescription* passwordsEntity;
     NSArray* data;
-    BOOL isPassword;
+    NSUserDefaults* defaults;
+@private
+    NSString* passowrd;
+    BOOL usePassword;
 }
 
 
@@ -31,6 +34,7 @@
 // Password stuff
 -(BOOL)isPasswordRequired;
 -(void)flipPasswordRequired:(BOOL)req;
--(void)setPassword:(NSInteger*)pwd;
+-(void)setPassword:(NSString*)pwd;
+-(NSString*)getPassword;
 
 @end

@@ -12,6 +12,7 @@
 		0625822914A6370800189952 /* PasswordManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0625822814A6370800189952 /* PasswordManager.m */; };
 		0625822C14A6655D00189952 /* PasswordObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 0625822B14A6655D00189952 /* PasswordObject.m */; };
 		06509AA014AC4CDD000A13E4 /* SettingsDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 06509A9F14AC4CDD000A13E4 /* SettingsDialog.m */; };
+		06509AA314AEE159000A13E4 /* SettingsObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 06509AA214AEE159000A13E4 /* SettingsObject.m */; };
 		065AE0A114A30D82001C7ABE /* QDPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = 065AE0A014A30D82001C7ABE /* QDPassword.m */; };
 		06DA0DBB14A3091100118886 /* libQuickDialog.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 06DA0DB714A308EC00118886 /* libQuickDialog.a */; };
 		06F64827149E4ADB0047E294 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F64826149E4ADB0047E294 /* UIKit.framework */; };
@@ -72,6 +73,8 @@
 		0625822B14A6655D00189952 /* PasswordObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordObject.m; sourceTree = "<group>"; };
 		06509A9E14AC4CDD000A13E4 /* SettingsDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsDialog.h; sourceTree = "<group>"; };
 		06509A9F14AC4CDD000A13E4 /* SettingsDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsDialog.m; sourceTree = "<group>"; };
+		06509AA114AEE159000A13E4 /* SettingsObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsObject.h; sourceTree = "<group>"; };
+		06509AA214AEE159000A13E4 /* SettingsObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsObject.m; sourceTree = "<group>"; };
 		065AE09F14A30D82001C7ABE /* QDPassword.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDPassword.h; sourceTree = "<group>"; };
 		065AE0A014A30D82001C7ABE /* QDPassword.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDPassword.m; sourceTree = "<group>"; };
 		06DA0DAB14A308EC00118886 /* QuickDialog.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = QuickDialog.xcodeproj; path = QuickDialog/QuickDialog.xcodeproj; sourceTree = "<group>"; };
@@ -182,6 +185,8 @@
 				0625822B14A6655D00189952 /* PasswordObject.m */,
 				06509A9E14AC4CDD000A13E4 /* SettingsDialog.h */,
 				06509A9F14AC4CDD000A13E4 /* SettingsDialog.m */,
+				06509AA114AEE159000A13E4 /* SettingsObject.h */,
+				06509AA214AEE159000A13E4 /* SettingsObject.m */,
 			);
 			path = "Password Keep";
 			sourceTree = "<group>";
@@ -354,6 +359,7 @@
 				0625822914A6370800189952 /* PasswordManager.m in Sources */,
 				0625822C14A6655D00189952 /* PasswordObject.m in Sources */,
 				06509AA014AC4CDD000A13E4 /* SettingsDialog.m in Sources */,
+				06509AA314AEE159000A13E4 /* SettingsObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

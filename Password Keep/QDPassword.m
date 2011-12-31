@@ -16,6 +16,7 @@
     -(void)onSettings:(QButtonElement*)buttonElement;
     -(void)onCancel;
     -(void)onClearAll;
+    -(void)onLogin;
 @end
 
 @implementation QDPassword
@@ -40,6 +41,11 @@
 }
 
 #pragma mark - Button actions
+
+-(void)onLogin
+{
+    
+}
 
 -(void)onCancel
 {
@@ -91,6 +97,29 @@
 }
 
 #pragma mark - Form Creation
+
++(QRootElement*)createLoginPage
+{
+    QRootElement *root = [[QRootElement alloc] init];
+    root.grouped = YES;
+    root.controllerName = @"QDPassword";
+    root.title = @"Login";
+    
+    // Only section
+    QSection *login = [[QSection alloc] init];
+    QEntryElement *loginBox = [[QEntryElement alloc] initWithTitle:nil Value:@"" Placeholder:@"Enter your password"];
+    [login addElement:loginBox];
+    [root addSection: login];
+    
+    QSection *input = [[QSection alloc] init];
+    QButtonElement *loginButton = [[QButtonElement alloc] initWithTitle:@"LOGIN"];
+    loginButton.controllerAction = @"onLogin:";
+    [input addElement: loginButton];
+    [root addSection: input];
+    
+    
+    return root;
+}
 
 +(QRootElement*)createPasswordDisplayForm:(NSManagedObject*)pw
 {
@@ -245,8 +274,10 @@
     
     QSection *detail = [[QSection alloc] init];
     QBooleanElement *usePassword = [[QBooleanElement alloc] initWithTitle:@"Use Password" BoolValue:NO];
+    usePassword.key = @"usePassword";
     [detail addElement:usePassword];
     QEntryElement *password = [[QEntryElement alloc] initWithTitle:@"Password" Value:@"" Placeholder:@"Enter Password"];
+    password.key = @"password";
     [detail addElement:password];
     [root addSection:detail];
     

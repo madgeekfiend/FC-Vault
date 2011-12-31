@@ -32,5 +32,6 @@
 +(QRootElement*)createGeneratePassword;
 +(QRootElement*)createPasswordEditForm:(NSManagedObject*)pw;
 +(QRootElement*)createSettingsPage;
++(QRootElement*)createLoginPage;
 
 @end
