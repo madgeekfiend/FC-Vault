@@ -9,6 +9,7 @@
 #import "QDPassword.h"
 #import "PasswordManager.h"
 #import "PasswordObject.h"
+#import "SettingsObject.h"
 
 @interface QDPassword()
     -(void)onSave:(QButtonElement*)buttonElement;
@@ -44,7 +45,7 @@
 
 -(void)onLogin
 {
-    
+    NSLog(@"LOGGING IN");   
 }
 
 -(void)onCancel
@@ -55,7 +56,25 @@
 
 -(void)onSettings:(QButtonElement *)buttonElement
 {
+    NSLog(@"Settings Saved");
+    // Now let's get stuff and see what we can do
+    SettingsObject *so = [[SettingsObject alloc] init];
     
+    [self.root fetchValueIntoObject:so];
+    
+    // Now validate what's in here
+    if ( [so.password length] < 4 && so.usePassword )
+    {
+        UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Unable to Save" message:@"Your password must be 4 characters or longer to save" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [av show];
+        return;
+    }
+    
+    // Now just save the info
+    [[PasswordManager sharedApplication] flipPasswordRequired: so.usePassword];
+    [[PasswordManager sharedApplication] setPassword: so.password];
+    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 -(void)onClearAll
@@ -101,8 +120,8 @@
 +(QRootElement*)createLoginPage
 {
     QRootElement *root = [[QRootElement alloc] init];
-    root.grouped = YES;
     root.controllerName = @"QDPassword";
+    root.grouped = YES;
     root.title = @"Login";
     
     // Only section
@@ -113,7 +132,7 @@
     
     QSection *input = [[QSection alloc] init];
     QButtonElement *loginButton = [[QButtonElement alloc] initWithTitle:@"LOGIN"];
-    loginButton.controllerAction = @"onLogin:";
+    loginButton.controllerAction = @"onLogin";
     [input addElement: loginButton];
     [root addSection: input];
     
@@ -275,9 +294,11 @@
     QSection *detail = [[QSection alloc] init];
     QBooleanElement *usePassword = [[QBooleanElement alloc] initWithTitle:@"Use Password" BoolValue:NO];
     usePassword.key = @"usePassword";
+    usePassword.boolValue = [[PasswordManager sharedApplication] isPasswordRequired];
     [detail addElement:usePassword];
     QEntryElement *password = [[QEntryElement alloc] initWithTitle:@"Password" Value:@"" Placeholder:@"Enter Password"];
     password.key = @"password";
+    password.value = [[PasswordManager sharedApplication] getPassword];
     [detail addElement:password];
     [root addSection:detail];
     
@@ -289,6 +310,7 @@
     
     QSection *footer = [[QSection alloc] init];
     QButtonElement *save = [[QButtonElement alloc] initWithTitle:@"Save"];
+    save.controllerAction = @"onSettings:";
     [footer addElement:save];
     [root addSection: footer];
     
