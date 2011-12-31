@@ -36,5 +36,6 @@
 -(void)flipPasswordRequired:(BOOL)req;
 -(void)setPassword:(NSString*)pwd;
 -(NSString*)getPassword;
+-(BOOL)loginWithPassword:(NSString*)pw;
 
 @end

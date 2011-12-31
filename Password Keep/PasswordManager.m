@@ -133,6 +133,15 @@ NSString* const PASSWORD_VALUE = @"password";
 
 #pragma mark - Password
 
+-(BOOL)loginWithPassword:(NSString*)pw
+{
+    if ([pw length] < 4 ) return NO;
+    
+    // Now compare it after getting the information from the form
+    
+    return [pw isEqualToString:pw];
+}
+
 -(BOOL)isPasswordRequired
 {
    

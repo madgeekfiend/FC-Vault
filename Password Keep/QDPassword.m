@@ -10,6 +10,7 @@
 #import "PasswordManager.h"
 #import "PasswordObject.h"
 #import "SettingsObject.h"
+#import "LoginObject.h"
 
 @interface QDPassword()
     -(void)onSave:(QButtonElement*)buttonElement;
@@ -46,6 +47,20 @@
 -(void)onLogin
 {
     NSLog(@"LOGGING IN");   
+    // Compare with login and do other stuff
+    LoginObject *lo = [[LoginObject alloc] init];
+    [self.root fetchValueIntoObject: lo];
+    
+    NSLog(@"Password entered: %@", lo.password);
+    if ( ![[PasswordManager sharedApplication] loginWithPassword: lo.password] )
+    {
+        UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Incorrect" message:@"The login you typed is incorrect. Please double check our login and try again." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [av show];
+        return;
+    }
+    
+    // Ya login is correct
+    [self dismissModalViewControllerAnimated:YES];
 }
 
 -(void)onCancel
@@ -127,6 +142,7 @@
     // Only section
     QSection *login = [[QSection alloc] init];
     QEntryElement *loginBox = [[QEntryElement alloc] initWithTitle:nil Value:@"" Placeholder:@"Enter your password"];
+    loginBox.key = @"password";
     [login addElement:loginBox];
     [root addSection: login];
     
@@ -298,7 +314,12 @@
     [detail addElement:usePassword];
     QEntryElement *password = [[QEntryElement alloc] initWithTitle:@"Password" Value:@"" Placeholder:@"Enter Password"];
     password.key = @"password";
-    password.value = [[PasswordManager sharedApplication] getPassword];
+    NSString* pw = [[PasswordManager sharedApplication] getPassword];
+    if ( [pw length] > 3 )
+    {
+        password.textValue = pw;
+    }
+    //password.value = [[PasswordManager sharedApplication] getPassword];
     [detail addElement:password];
     [root addSection:detail];
     

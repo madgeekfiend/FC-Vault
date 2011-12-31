@@ -63,7 +63,7 @@
     {
         // Password is required pop the login box
         QDPassword *loginDlg = (QDPassword*)[QuickDialogController controllerForRoot:[QDPassword createLoginPage]];
-        [self presentModalViewController:loginDlg animated:YES];
+        [self presentModalViewController:loginDlg animated:NO];
         
     }
     [super viewWillAppear:animated];
