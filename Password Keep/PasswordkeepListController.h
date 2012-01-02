@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "QDPassword.h"
+#import <iAd/iAd.h>
 
-@interface PasswordkeepListController : UITableViewController <QDPasswordDelegate>
+@interface PasswordkeepListController : UITableViewController <QDPasswordDelegate, ADBannerViewDelegate>
 {
+    ADBannerView* adview;
 }
 - (IBAction)displaySettingsDialog:(id)sender;
 

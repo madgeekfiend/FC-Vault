@@ -35,7 +35,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
+    // Load ads for the table view
+    adview = [[ADBannerView alloc] initWithFrame:CGRectZero];
+    adview.requiredContentSizeIdentifiers = [NSSet setWithObjects: ADBannerContentSizeIdentifierPortrait,nil];
+    adview.delegate = self;
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -160,6 +164,12 @@
     return YES;
 }
 */
+
+#pragma mark - ADBannerView delegate
+-(void)bannerViewDidLoadAd:(ADBannerView *)banner
+{
+    self.tableView.tableHeaderView = adview;
+}
 
 #pragma mark - Table view delegate
 
