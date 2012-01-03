@@ -40,6 +40,17 @@
     adview = [[ADBannerView alloc] initWithFrame:CGRectZero];
     adview.requiredContentSizeIdentifiers = [NSSet setWithObjects: ADBannerContentSizeIdentifierPortrait,nil];
     adview.delegate = self;
+    
+    // Check to see if I should login
+    // Let's check if login is required
+    if ( [[PasswordManager sharedApplication] isPasswordRequired] )
+    {
+        // Password is required pop the login box
+        QDPassword *loginDlg = (QDPassword*)[QuickDialogController controllerForRoot:[QDPassword createLoginPage]];
+        [self presentModalViewController:loginDlg animated:NO];
+        
+    }
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -62,14 +73,6 @@
 {
     [self.tableView reloadData];
     
-    // Let's check if login is required
-    if ( [[PasswordManager sharedApplication] isPasswordRequired] )
-    {
-        // Password is required pop the login box
-        QDPassword *loginDlg = (QDPassword*)[QuickDialogController controllerForRoot:[QDPassword createLoginPage]];
-        [self presentModalViewController:loginDlg animated:NO];
-        
-    }
     [super viewWillAppear:animated];
 }
 

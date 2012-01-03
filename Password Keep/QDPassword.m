@@ -143,6 +143,7 @@
     QSection *login = [[QSection alloc] init];
     QEntryElement *loginBox = [[QEntryElement alloc] initWithTitle:nil Value:@"" Placeholder:@"Enter your password"];
     loginBox.key = @"password";
+    loginBox.secureTextEntry = YES;
     [login addElement:loginBox];
     [root addSection: login];
     

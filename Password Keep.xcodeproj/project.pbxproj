@@ -16,6 +16,8 @@
 		06509AA614AFC3DA000A13E4 /* LoginObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 06509AA514AFC3DA000A13E4 /* LoginObject.m */; };
 		06509AA814B17538000A13E4 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06509AA714B17538000A13E4 /* iAd.framework */; };
 		065AE0A114A30D82001C7ABE /* QDPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = 065AE0A014A30D82001C7ABE /* QDPassword.m */; };
+		0697D43914B27F4300B2367B /* SafeFinal002.png in Resources */ = {isa = PBXBuildFile; fileRef = 0697D43814B27F4300B2367B /* SafeFinal002.png */; };
+		0697D43B14B27F7D00B2367B /* SafeFinal003.png in Resources */ = {isa = PBXBuildFile; fileRef = 0697D43A14B27F7D00B2367B /* SafeFinal003.png */; };
 		06DA0DBB14A3091100118886 /* libQuickDialog.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 06DA0DB714A308EC00118886 /* libQuickDialog.a */; };
 		06F64827149E4ADB0047E294 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F64826149E4ADB0047E294 /* UIKit.framework */; };
 		06F64829149E4ADB0047E294 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F64828149E4ADB0047E294 /* Foundation.framework */; };
@@ -82,6 +84,8 @@
 		06509AA714B17538000A13E4 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		065AE09F14A30D82001C7ABE /* QDPassword.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDPassword.h; sourceTree = "<group>"; };
 		065AE0A014A30D82001C7ABE /* QDPassword.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDPassword.m; sourceTree = "<group>"; };
+		0697D43814B27F4300B2367B /* SafeFinal002.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SafeFinal002.png; sourceTree = "<group>"; };
+		0697D43A14B27F7D00B2367B /* SafeFinal003.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SafeFinal003.png; sourceTree = "<group>"; };
 		06DA0DAB14A308EC00118886 /* QuickDialog.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = QuickDialog.xcodeproj; path = QuickDialog/QuickDialog.xcodeproj; sourceTree = "<group>"; };
 		06F64822149E4ADB0047E294 /* Password Keep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Password Keep.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		06F64826149E4ADB0047E294 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -143,6 +147,8 @@
 		06F64817149E4ADA0047E294 = {
 			isa = PBXGroup;
 			children = (
+				0697D43A14B27F7D00B2367B /* SafeFinal003.png */,
+				0697D43814B27F4300B2367B /* SafeFinal002.png */,
 				06509AA714B17538000A13E4 /* iAd.framework */,
 				060BEE2414A8F51A00C65856 /* Default.png */,
 				06DA0DAB14A308EC00118886 /* QuickDialog.xcodeproj */,
@@ -326,6 +332,8 @@
 			files = (
 				06F64833149E4ADB0047E294 /* InfoPlist.strings in Resources */,
 				0618A173149E4B4F0084884E /* mainboard.storyboard in Resources */,
+				0697D43914B27F4300B2367B /* SafeFinal002.png in Resources */,
+				0697D43B14B27F7D00B2367B /* SafeFinal003.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
