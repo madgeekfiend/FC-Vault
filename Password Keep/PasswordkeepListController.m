@@ -98,8 +98,6 @@
     else
         adview.currentContentSizeIdentifier = ADBannerContentSizeIdentifierLandscape;
     
-    // Return YES for supported orientations
-    //return (interfaceOrientation == UIInterfaceOrientationPortrait);
     return YES;
 }
 
