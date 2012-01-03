@@ -38,7 +38,7 @@
     
     // Load ads for the table view
     adview = [[ADBannerView alloc] initWithFrame:CGRectZero];
-    adview.requiredContentSizeIdentifiers = [NSSet setWithObjects: ADBannerContentSizeIdentifierPortrait,nil];
+    adview.requiredContentSizeIdentifiers = [NSSet setWithObjects: ADBannerContentSizeIdentifierPortrait, ADBannerContentSizeIdentifierLandscape, nil];
     adview.delegate = self;
     
     // Check to see if I should login
@@ -93,8 +93,14 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
+    if (UIInterfaceOrientationIsPortrait(interfaceOrientation) )
+        adview.currentContentSizeIdentifier = ADBannerContentSizeIdentifierPortrait;
+    else
+        adview.currentContentSizeIdentifier = ADBannerContentSizeIdentifierLandscape;
+    
     // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    //return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    return YES;
 }
 
 #pragma mark - Table view data source
