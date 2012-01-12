@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "FlurryAnalytics.h"
 
 @implementation AppDelegate
 
@@ -17,7 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-
+    [FlurryAnalytics startSession:@"JHQMAJPVF9UAZNML1VBN"];
     return YES;
 }
 

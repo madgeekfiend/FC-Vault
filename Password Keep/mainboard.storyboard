@@ -45,7 +45,7 @@
                             <outlet property="delegate" destination="bqt-M0-kKW" id="4ZV-Pq-Phf"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Password Keep" id="RfI-jf-fuU">
+                    <navigationItem key="navigationItem" title="FC Vault" id="RfI-jf-fuU">
                         <barButtonItem key="leftBarButtonItem" title="Settings" id="YM9-kN-3Gj">
                             <connections>
                                 <action selector="displaySettingsDialog:" destination="bqt-M0-kKW" id="t4F-NX-fgb"/>
@@ -80,6 +80,15 @@
             <point key="canvasLocation" x="-559" y="198"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="PasswordkeepListController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PasswordkeepListController.h"/>
+            <relationships>
+                <relationship kind="action" name="addPassword:"/>
+                <relationship kind="action" name="displaySettingsDialog:"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

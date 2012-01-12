@@ -56,7 +56,7 @@ NSString* const PASSWORD_VALUE = @"password";
 #pragma mark - Password Generator
 
 -(NSString *) genRandStringLength: (int) len {
-    NSString *letters = @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    NSString *letters = @"abcdefghijklmnpqrstuvwxyzABCDEFGHIJKLMNPQRSTUVWXYZ0123456789";
     
     NSMutableString *randomString = [NSMutableString stringWithCapacity: len];
     

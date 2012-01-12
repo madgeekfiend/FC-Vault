@@ -19,6 +19,7 @@
 		0697D43914B27F4300B2367B /* SafeFinal002.png in Resources */ = {isa = PBXBuildFile; fileRef = 0697D43814B27F4300B2367B /* SafeFinal002.png */; };
 		0697D43B14B27F7D00B2367B /* SafeFinal003.png in Resources */ = {isa = PBXBuildFile; fileRef = 0697D43A14B27F7D00B2367B /* SafeFinal003.png */; };
 		06DA0DBB14A3091100118886 /* libQuickDialog.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 06DA0DB714A308EC00118886 /* libQuickDialog.a */; };
+		06DA8EF214BDC56300D14D16 /* libFlurryAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 06DA8EF114BDC56200D14D16 /* libFlurryAnalytics.a */; };
 		06F64827149E4ADB0047E294 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F64826149E4ADB0047E294 /* UIKit.framework */; };
 		06F64829149E4ADB0047E294 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F64828149E4ADB0047E294 /* Foundation.framework */; };
 		06F6482B149E4ADB0047E294 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06F6482A149E4ADB0047E294 /* CoreGraphics.framework */; };
@@ -86,6 +87,8 @@
 		0697D43814B27F4300B2367B /* SafeFinal002.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SafeFinal002.png; path = ../SafeFinal002.png; sourceTree = "<group>"; };
 		0697D43A14B27F7D00B2367B /* SafeFinal003.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SafeFinal003.png; path = ../SafeFinal003.png; sourceTree = "<group>"; };
 		06DA0DAB14A308EC00118886 /* QuickDialog.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = QuickDialog.xcodeproj; path = QuickDialog/QuickDialog.xcodeproj; sourceTree = "<group>"; };
+		06DA8EF014BDC56200D14D16 /* FlurryAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlurryAnalytics.h; sourceTree = "<group>"; };
+		06DA8EF114BDC56200D14D16 /* libFlurryAnalytics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurryAnalytics.a; sourceTree = "<group>"; };
 		06F64822149E4ADB0047E294 /* Password Keep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Password Keep.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		06F64826149E4ADB0047E294 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		06F64828149E4ADB0047E294 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -117,6 +120,7 @@
 				06F64829149E4ADB0047E294 /* Foundation.framework in Frameworks */,
 				06F6482B149E4ADB0047E294 /* CoreGraphics.framework in Frameworks */,
 				06F6482D149E4ADB0047E294 /* CoreData.framework in Frameworks */,
+				06DA8EF214BDC56300D14D16 /* libFlurryAnalytics.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,6 +154,15 @@
 				06DA0DB714A308EC00118886 /* libQuickDialog.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		06DA8EEF14BDC56200D14D16 /* FlurryAnalytics */ = {
+			isa = PBXGroup;
+			children = (
+				06DA8EF014BDC56200D14D16 /* FlurryAnalytics.h */,
+				06DA8EF114BDC56200D14D16 /* libFlurryAnalytics.a */,
+			);
+			path = FlurryAnalytics;
 			sourceTree = "<group>";
 		};
 		06F64817149E4ADA0047E294 = {
@@ -188,6 +201,7 @@
 		06F6482E149E4ADB0047E294 /* Password Keep */ = {
 			isa = PBXGroup;
 			children = (
+				06DA8EEF14BDC56200D14D16 /* FlurryAnalytics */,
 				067CFB3C14B31A1300192393 /* Images */,
 				06F64837149E4ADB0047E294 /* AppDelegate.h */,
 				06F64838149E4ADB0047E294 /* AppDelegate.m */,
@@ -490,6 +504,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Password Keep/Password Keep-Prefix.pch";
 				INFOPLIST_FILE = "Password Keep/Password Keep-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Password Keep/FlurryAnalytics\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -502,6 +520,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Password Keep/Password Keep-Prefix.pch";
 				INFOPLIST_FILE = "Password Keep/Password Keep-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Password Keep/FlurryAnalytics\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;

@@ -19,6 +19,7 @@
     -(void)onCancel;
     -(void)onClearAll;
     -(void)onLogin;
+    -(void)onRandom;
 @end
 
 @implementation QDPassword
@@ -130,6 +131,15 @@
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
+-(void)onRandom
+{
+    NSLog(@"Generating Random Password");
+    // Get element with key password
+    QEntryElement *password = (QEntryElement*)[self.root elementWithKey:@"password"];
+    password.textValue = [[PasswordManager sharedApplication] genRandStringLength:8];
+    [self.tableView reloadData];
+}
+
 #pragma mark - Form Creation
 
 +(QRootElement*)createLoginPage
@@ -223,11 +233,20 @@
 
     // Button Section
     QSection* buttonSection = [[QSection alloc] init];
+    QSection *randomSection = [[QSection alloc] init];
+    
+    QButtonElement* btnRandom = [[QButtonElement alloc] init];
+    btnRandom.title = @"Generate Random Password";
+    btnRandom.controllerAction = @"onRandom";
+    [randomSection addElement:btnRandom];
+    
+    
     QButtonElement* btnSave = [[QButtonElement alloc] init];
     btnSave.title = @"Save";
     btnSave.controllerAction = @"onSave:";
     [buttonSection addElement:btnSave];
     
+    [root addSection:randomSection];
     [root addSection:buttonSection];
     
     return root;
