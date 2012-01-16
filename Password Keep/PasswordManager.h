@@ -14,11 +14,12 @@
     NSEntityDescription* passwordsEntity;
     NSArray* data;
     NSUserDefaults* defaults;
+    double delay_time;
+    
 @private
     NSString* passowrd;
     BOOL usePassword;
 }
-
 
 +(id)sharedApplication;
 
@@ -37,5 +38,11 @@
 -(void)setPassword:(NSString*)pwd;
 -(NSString*)getPassword;
 -(BOOL)loginWithPassword:(NSString*)pw;
+
+-(BOOL)shouldLoginSinceLastTime;
+-(void)updateLastLoginTime;
+
+-(double)getDelayTime;
+-(void)setDelayTime:(double)t;
 
 @end

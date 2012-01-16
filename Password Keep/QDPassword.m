@@ -61,6 +61,7 @@
     }
     
     // Ya login is correct
+    [[PasswordManager sharedApplication] updateLastLoginTime];
     [self dismissModalViewControllerAnimated:YES];
 }
 
@@ -84,6 +85,11 @@
         UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Unable to Save" message:@"Your password must be 4 characters or longer to save" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [av show];
         return;
+    }
+    
+    if ( so.delay > 0 )
+    {
+        [[PasswordManager sharedApplication] setDelayTime:so.delay];
     }
     
     // Now just save the info
@@ -339,8 +345,13 @@
     {
         password.textValue = pw;
     }
-    //password.value = [[PasswordManager sharedApplication] getPassword];
     [detail addElement:password];
+    
+    QDecimalElement *delay = [[QDecimalElement alloc] initWithTitle:@"Delay" value:[[PasswordManager sharedApplication] getDelayTime] ];
+    delay.key = @"delay";
+    delay.keyboardType = UIKeyboardTypeNumberPad;
+    [detail addElement:delay];
+    [detail setFooter:@"Delay defaults to 5 seconds"];
     [root addSection:detail];
     
     QSection *clear = [[QSection alloc] init];

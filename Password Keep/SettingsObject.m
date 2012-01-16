@@ -9,7 +9,7 @@
 #import "SettingsObject.h"
 
 @implementation SettingsObject
-@synthesize password, usePassword;
+@synthesize password, usePassword,delay;
 
 
 @end

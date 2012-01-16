@@ -12,8 +12,10 @@
 {
     BOOL usePassword;
     NSString* password;
+    double delay;
 }
 
+@property(nonatomic)double delay;
 @property BOOL usePassword;
 @property(nonatomic,retain) NSString* password;
 

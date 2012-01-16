@@ -48,6 +48,9 @@ NSString* const PASSWORD_VALUE = @"password";
         // get the password and if they're using it
         usePassword = [defaults boolForKey:USE_PASSWORD_KEY];
         passowrd = [defaults stringForKey:PASSWORD_VALUE];
+        
+        // Now get the delay time
+        delay_time = [defaults doubleForKey:@"delaytime"] == 0 ? 5.0 : [defaults doubleForKey:@"lastlogin"];
 	}
     
 	return self;
@@ -165,5 +168,45 @@ NSString* const PASSWORD_VALUE = @"password";
     return passowrd;
 }
 
+-(double)getDelayTime
+{
+    return delay_time;
+}
+
+-(BOOL)shouldLoginSinceLastTime
+{
+    BOOL shouldLogin = YES;
+    
+    // Should we require login since last time
+    // Get last time
+    double last_login = [defaults doubleForKey:@"lastlogin"];
+    
+    // Current time
+    NSTimeInterval timeStamp = [[NSDate date] timeIntervalSince1970];
+  
+    // Now find out what we should do I want a login 
+    // Time interval goes here
+    if ( last_login > 0  ) // a value exists
+    {
+        if ( timeStamp - last_login < 3.0 )
+            return NO;
+    }
+    
+    
+    return shouldLogin;
+}
+
+-(void)updateLastLoginTime
+{
+    NSTimeInterval timeStamp = [[NSDate date] timeIntervalSince1970];
+   
+    [defaults setDouble:timeStamp forKey:@"lastlogin"];
+}
+
+-(void)setDelayTime:(double)t
+{
+    delay_time = t;
+    [defaults setDouble:t forKey:@"delaytime"];
+}
 
 @end

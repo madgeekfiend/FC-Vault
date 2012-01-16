@@ -40,16 +40,19 @@
     adview = [[ADBannerView alloc] initWithFrame:CGRectZero];
     adview.requiredContentSizeIdentifiers = [NSSet setWithObjects: ADBannerContentSizeIdentifierPortrait, ADBannerContentSizeIdentifierLandscape, nil];
     adview.delegate = self;
-    
+
     // Check to see if I should login
     // Let's check if login is required
-    if ( [[PasswordManager sharedApplication] isPasswordRequired] )
+    if ( [[PasswordManager sharedApplication] isPasswordRequired] && [[PasswordManager sharedApplication] shouldLoginSinceLastTime] )
     {
         // Password is required pop the login box
         QDPassword *loginDlg = (QDPassword*)[QuickDialogController controllerForRoot:[QDPassword createLoginPage]];
         [self presentModalViewController:loginDlg animated:NO];
         
     }
+    
+    // Register for notifcation
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(awakeFromBackground) name:UIApplicationDidBecomeActiveNotification object:nil];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -243,5 +246,16 @@
     
 }
 
+#pragma mark - Application Delegate
+-(void)awakeFromBackground
+{
+    if ( [[PasswordManager sharedApplication] isPasswordRequired] && [[PasswordManager sharedApplication] shouldLoginSinceLastTime] )
+    {
+        // Password is required pop the login box
+        QDPassword *loginDlg = (QDPassword*)[QuickDialogController controllerForRoot:[QDPassword createLoginPage]];
+        [self presentModalViewController:loginDlg animated:NO];
+        
+    }
+}
 
 @end

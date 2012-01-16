@@ -19,4 +19,6 @@
 - (IBAction)addPassword:(id)sender;
 -(void)editPassword:(id)pw;
 
+-(void)awakeFromBackground;
+
 @end
