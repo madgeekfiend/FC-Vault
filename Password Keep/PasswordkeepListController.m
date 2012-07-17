@@ -236,7 +236,6 @@
 
 }
 
-
 - (IBAction)displaySettingsDialog:(id)sender {
 
     QDPassword *settingsDlg = (QDPassword*)[QuickDialogController controllerForRoot:[QDPassword createSettingsPage]];
